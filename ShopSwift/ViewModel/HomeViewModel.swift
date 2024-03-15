@@ -20,7 +20,8 @@ final class HomeViewModel {
             switch result {
             case .success(let products):
                 self.products = products
-                print(products.count)
+                self.view?.reloadData()
+                print(products.first!)
             case .failure(let error):
                 print("Error getProducts in ViewModel \(error.localizedDescription)")
             }
@@ -44,5 +45,7 @@ extension HomeViewModel: HomeViewModelInterface {
     func viewDidLoad() {
         getProducts()
         view?.configureVC()
+        view?.configureCollectionView()
+
     }
 }

@@ -63,7 +63,7 @@ extension HomeView: HomeViewInterface, UICollectionViewDelegate, UICollectionVie
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: view.frame.width, height: view.frame.height/1.75)
+        return CGSize.init(width: view.frame.width, height: view.frame.height/1.25)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.products.count

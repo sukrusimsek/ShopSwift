@@ -17,7 +17,7 @@ class CustomCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 12, weight: .light)
+        label.font = .systemFont(ofSize: 24, weight: .light)
         label.textColor = .black
         label.backgroundColor = UIColor(rgb: 0xC38154)
         label.layer.cornerRadius = 8
@@ -29,7 +29,7 @@ class CustomCell: UICollectionViewCell {
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 12, weight: .light)
+        label.font = .systemFont(ofSize: 20, weight: .light)
         label.textColor = .black
         label.backgroundColor = UIColor(rgb: 0xC38154)
         label.layer.cornerRadius = 8
@@ -44,11 +44,10 @@ class CustomCell: UICollectionViewCell {
         button.frame = .zero
         button.setTitle("Add Cart", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .blue
-        button.tintColor = .red
+        button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
-        button.addTarget(CustomCell.self, action: #selector(tappedAddCart), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tappedAddCart), for: .touchUpInside)
         return button
     }()
     @objc func tappedAddCart() {
@@ -57,7 +56,7 @@ class CustomCell: UICollectionViewCell {
     private let descriptionProduct: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 11, weight: .light)
+        label.font = .systemFont(ofSize: 16, weight: .light)
         label.textColor = .black
         label.backgroundColor = UIColor(rgb: 0xC38154)
         label.layer.cornerRadius = 8
@@ -100,34 +99,35 @@ class CustomCell: UICollectionViewCell {
     }
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            productImage.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+            productImage.topAnchor.constraint(equalTo: contentView.topAnchor),
             productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            productImage.heightAnchor.constraint(equalToConstant: contentView.frame.height/2),
-            
-            titleLabel.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 5),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 5),
-            titleLabel.widthAnchor.constraint(equalToConstant: contentView.frame.width/3.25),
-            
-            priceLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor),
-            priceLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 5),
-            priceLabel.widthAnchor.constraint(equalToConstant: contentView.frame.width/3.25),
-            
-            addCartButton.topAnchor.constraint(equalTo: titleLabel.topAnchor),
-            addCartButton.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: 5),
-            addCartButton.widthAnchor.constraint(equalToConstant: contentView.frame.width/3.25),
-            
-            descriptionProduct.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            productImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.5),
+
+            titleLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 5),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+
+            priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+
+            addCartButton.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 5),
+            addCartButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            addCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            addCartButton.heightAnchor.constraint(equalToConstant: 44),
+
+            descriptionProduct.topAnchor.constraint(equalTo: addCartButton.bottomAnchor, constant: 5),
             descriptionProduct.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             descriptionProduct.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-            
-            
-        
+            descriptionProduct.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
+
         ])
+
     }
     func setupCell(_ product: ShopSwiftElement) {
         titleLabel.text = product.title
-        guard let imageURL = URL(string: product.image ?? "") else {
+        guard let imageURL = URL(string: product.image ?? "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg") else {
             return
         }
         loadImage(from: imageURL) { image in
@@ -137,9 +137,9 @@ class CustomCell: UICollectionViewCell {
                 print("Load Image Error in CustomCell")
             }
         }
-        let priceText = String(format: "%.2f $", product.price ?? "Ask please")
+        let priceText = product.price != nil ? String(format: "%.2f $", product.price!) : "Ask please"
         priceLabel.text = priceText
-        
+
         descriptionProduct.text = product.description
         
         
