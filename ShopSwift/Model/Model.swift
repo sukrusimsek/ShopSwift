@@ -32,4 +32,3 @@ struct Rating: Codable {
     let count: Int?
 }
 
-typealias ShopSwift = [ShopSwiftElement]

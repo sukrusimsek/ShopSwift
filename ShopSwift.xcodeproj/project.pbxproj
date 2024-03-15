@@ -17,6 +17,7 @@
 		8D60627E2BA2FC0B00DCEE5F /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60627D2BA2FC0B00DCEE5F /* UIColor+Ext.swift */; };
 		8D6062802BA2FC3600DCEE5F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60627F2BA2FC3600DCEE5F /* NetworkManager.swift */; };
 		8D6062822BA2FC4800DCEE5F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6062812BA2FC4800DCEE5F /* Endpoint.swift */; };
+		8D6062852BA3DDB600DCEE5F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6062842BA3DDB600DCEE5F /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8D60627D2BA2FC0B00DCEE5F /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		8D60627F2BA2FC3600DCEE5F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8D6062812BA2FC4800DCEE5F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		8D6062842BA3DDB600DCEE5F /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		8D60625D2BA2F6E400DCEE5F /* ShopSwift */ = {
 			isa = PBXGroup;
 			children = (
+				8D6062832BA3DD9400DCEE5F /* Cell */,
 				8D60627C2BA2FBE700DCEE5F /* Extensions */,
 				8D60627B2BA2FBB300DCEE5F /* Service */,
 				8D6062762BA2F77100DCEE5F /* Supports */,
@@ -125,6 +128,14 @@
 				8D60627D2BA2FC0B00DCEE5F /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8D6062832BA3DD9400DCEE5F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8D6062842BA3DDB600DCEE5F /* CustomCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				8D6062632BA2F6E400DCEE5F /* HomeView.swift in Sources */,
 				8D6062822BA2FC4800DCEE5F /* Endpoint.swift in Sources */,
 				8D60625F2BA2F6E400DCEE5F /* AppDelegate.swift in Sources */,
+				8D6062852BA3DDB600DCEE5F /* CustomCell.swift in Sources */,
 				8D6062802BA2FC3600DCEE5F /* NetworkManager.swift in Sources */,
 				8D60627E2BA2FC0B00DCEE5F /* UIColor+Ext.swift in Sources */,
 				8D6062612BA2F6E400DCEE5F /* SceneDelegate.swift in Sources */,
