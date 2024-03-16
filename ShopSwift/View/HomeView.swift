@@ -50,7 +50,7 @@ extension HomeView: HomeViewInterface, UICollectionViewDelegate, UICollectionVie
         collectionViewForHomePage.register(CustomCell.self, forCellWithReuseIdentifier: "Cell")
         view.addSubview(collectionViewForHomePage)
         NSLayoutConstraint.activate([
-            collectionViewForHomePage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionViewForHomePage.topAnchor.constraint(equalTo: view.topAnchor),
             collectionViewForHomePage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionViewForHomePage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionViewForHomePage.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
