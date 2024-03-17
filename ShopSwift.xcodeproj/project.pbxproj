@@ -22,6 +22,7 @@
 		8D7A7DF82BA52BE1001B9CCE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7A7DF72BA52BE1001B9CCE /* ProfileView.swift */; };
 		8D7A7DFA2BA52C0B001B9CCE /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7A7DF92BA52C0B001B9CCE /* CartView.swift */; };
 		8D7A7DFC2BA52C28001B9CCE /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7A7DFB2BA52C28001B9CCE /* FavoriteView.swift */; };
+		8D7A7E012BA7B22B001B9CCE /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7A7E002BA7B22B001B9CCE /* FavoriteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		8D7A7DF72BA52BE1001B9CCE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8D7A7DF92BA52C0B001B9CCE /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		8D7A7DFB2BA52C28001B9CCE /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		8D7A7E002BA7B22B001B9CCE /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6062772BA2FA2800DCEE5F /* HomeViewModel.swift */,
+				8D7A7E002BA7B22B001B9CCE /* FavoriteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				8D7A7DF62BA52B5B001B9CCE /* TabBarManager.swift in Sources */,
 				8D60625F2BA2F6E400DCEE5F /* AppDelegate.swift in Sources */,
 				8D6062852BA3DDB600DCEE5F /* CustomCell.swift in Sources */,
+				8D7A7E012BA7B22B001B9CCE /* FavoriteViewModel.swift in Sources */,
 				8D7A7DFA2BA52C0B001B9CCE /* CartView.swift in Sources */,
 				8D6062802BA2FC3600DCEE5F /* NetworkManager.swift in Sources */,
 				8D7A7DFC2BA52C28001B9CCE /* FavoriteView.swift in Sources */,

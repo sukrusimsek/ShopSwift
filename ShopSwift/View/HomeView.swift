@@ -32,7 +32,7 @@ extension HomeView: HomeViewInterface, UICollectionViewDelegate, UICollectionVie
     
     
     func configureVC() {
-        view.backgroundColor = .systemBrown
+        
     }
     func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -74,5 +74,6 @@ extension HomeView: HomeViewInterface, UICollectionViewDelegate, UICollectionVie
         cell.setupCell(product)
         return cell
     }
+    
     
 }

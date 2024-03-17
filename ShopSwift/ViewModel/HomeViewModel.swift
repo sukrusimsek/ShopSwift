@@ -27,18 +27,6 @@ final class HomeViewModel {
             }
         }
     }
-//    private func getCategoryProduct(category: String) {
-//        NetworkManager.shared.getCategoryProduct(category: category) { result in
-//            switch result {
-//            case .success(let products):
-//                self.products = products
-//                
-//            case .failure(let error):
-//                print("Error getCategoryProduct in ViewModel \(error.localizedDescription)")
-//            }
-//            
-//        }
-//    }
 }
 
 extension HomeViewModel: HomeViewModelInterface {

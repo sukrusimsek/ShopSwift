@@ -6,24 +6,24 @@
 //
 
 import UIKit
+protocol FavoriteViewInterface: AnyObject {
+    func configureVC()
+}
 
 class FavoriteView: UIViewController {
-
+    var products = [ShopSwiftElement]()
+    private let viewModel = FavoriteViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .cyan
+        viewModel.view = self
+        viewModel.viewDidLoad()
+        
+    }
+}
+extension FavoriteView: FavoriteViewInterface {
+    func configureVC() {
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
